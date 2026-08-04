@@ -7,30 +7,62 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      backgroundColor: tdBGColor,
+      appBar: _buildAppBar(),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
           children: [
-            Icon(
-              Icons.menu,
-              color: tedblack,
-              size: 30,
-            ),
-            SizedBox(
-              height: 40,
-              width: 40,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
-                child: Image.asset(
-                  "assets/shahzaib.jpg",
-                  width: 300,
-                  height: 300,
-                  fit: BoxFit.cover,
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(0),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: tedblack,
+                    size: 50,
+                  ),
+                  prefixIconConstraints:
+                      BoxConstraints(maxHeight: 20, minHeight: 25),
                 ),
               ),
-            ),
+            )
           ],
         ),
+      ),
+    );
+  }
+
+  AppBar _buildAppBar() {
+    return AppBar(
+      backgroundColor: tdBGColor,
+      elevation: 0,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Icon(
+            Icons.menu,
+            color: tedblack,
+            size: 30,
+          ),
+          SizedBox(
+            height: 40,
+            width: 40,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: Image.asset(
+                "assets/shahzaib.jpg",
+                width: 300,
+                height: 300,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
