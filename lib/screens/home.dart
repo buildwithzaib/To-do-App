@@ -16,13 +16,11 @@ class HomePage extends StatelessWidget {
             searchBox(),
             ListView(
               children: [
-                Container(
-                  child: Text(
-                    "All ToDos",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500,
-                    ),
+                Text(
+                  "All ToDos",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500,
                   ),
                 )
               ],
