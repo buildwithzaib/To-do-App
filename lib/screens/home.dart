@@ -10,28 +10,48 @@ class HomePage extends StatelessWidget {
       backgroundColor: tdBGColor,
       appBar: _buildAppBar(),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(0),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: tedblack,
-                    size: 50,
+            searchBox(),
+            ListView(
+              children: [
+                Container(
+                  child: Text(
+                    "All ToDos",
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                  prefixIconConstraints:
-                      BoxConstraints(maxHeight: 20, minHeight: 25),
-                ),
-              ),
+                )
+              ],
             )
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget searchBox() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(0),
+          prefixIcon: Icon(
+            Icons.search,
+            color: tedblack,
+            size: 20,
+          ),
+          prefixIconConstraints: BoxConstraints(maxHeight: 25, minHeight: 20),
+          border: InputBorder.none,
+          hintText: "Search",
+          hintStyle: TextStyle(color: tdGrey),
         ),
       ),
     );
