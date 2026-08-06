@@ -12,7 +12,7 @@ class TodoItems extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
-          print("clicked in ToDo-item");
+          print("clicked in ToDo-items");
         },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
