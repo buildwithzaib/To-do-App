@@ -3,7 +3,7 @@ import 'package:todo_appp/constants/colors.dart';
 import 'package:todo_appp/constants/models/todo.dart';
 
 class TodoItems extends StatelessWidget {
-  const TodoItems({Key? key, required this.todo}) : super(key: key);
+  const TodoItems({super.key, required this.todo});
   final ToDo todo;
 
   @override
