@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_appp/constants/colors.dart';
+import 'package:todo_appp/widgets/todo_items.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,16 +15,25 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             searchBox(),
-            ListView(
-              children: [
-                Text(
-                  "All ToDos",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
+            Expanded(
+              child: ListView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 20,
+                      bottom: 20,
+                    ),
+                    child: Text(
+                      "All ToDos",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
-                )
-              ],
+                  TodoItems(),
+                ],
+              ),
             )
           ],
         ),
