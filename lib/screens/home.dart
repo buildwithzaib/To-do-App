@@ -4,7 +4,7 @@ import 'package:todo_appp/constants/models/todo.dart';
 import 'package:todo_appp/widgets/todo_items.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();

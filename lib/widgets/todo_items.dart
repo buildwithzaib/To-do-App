@@ -11,7 +11,6 @@ class TodoItems extends StatelessWidget {
   final ToDo todo;
   final onToDoChanged;
   final ondeleteitem;
-  
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class TodoItems extends StatelessWidget {
         ),
         trailing: Container(
           padding: EdgeInsets.all(0),
-          margin: EdgeInsets.symmetric(vertical: 12),
+          margin: EdgeInsets.symmetric(vertical: 5),
           height: 35,
           width: 35,
           decoration: BoxDecoration(
@@ -55,7 +54,9 @@ class TodoItems extends StatelessWidget {
               // print("Clicked in delete icon.");
               ondeleteitem(todo.id);
             },
-            icon: Icon(Icons.delete),
+            icon: Icon(
+              Icons.delete,
+            ),
           ),
         ),
       ),
