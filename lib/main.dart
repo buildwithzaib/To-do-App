@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:todo_appp/constants/theme.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_appp/constants/models/themeprovider.dart';
 
 import 'screens/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -20,8 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Todo App",
       home: HomePage(),
-      theme: lightmode,
-      darkTheme: darkmode,
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }

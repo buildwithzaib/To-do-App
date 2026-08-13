@@ -7,17 +7,17 @@ import 'package:flutter/material.dart';
 //   brightness: Brightness.dark,
 // };
 
-final ThemeData lightmode = ThemeData(
+final ThemeData lightMode = ThemeData(
     brightness: Brightness.light,
     colorScheme: ColorScheme.light(
-      background: Colors.grey,
+      surface: Colors.grey,
       primary: Colors.grey.shade400,
     ));
 
-final ThemeData darkmode = ThemeData(
+final ThemeData darkMode = ThemeData(
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(
-    background: Colors.grey.shade900,
+    surface: Colors.grey.shade900,
     primary: Colors.grey.shade700,
   ),
 );
