@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:todo_appp/constants/theme.dart';
 
 import 'screens/home.dart';
 
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Todo App",
       home: HomePage(),
+      theme: lightmode,
+      darkTheme: darkmode,
     );
   }
 }

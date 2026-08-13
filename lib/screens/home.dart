@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: tdBGColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: _buildAppBar(),
       body: Stack(
         children: [
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                         boxShadow: const [
                           BoxShadow(
-                            color: Colors.grey,
+                            color: tdGrey,
                             offset: Offset(0.0, 0.0),
                             blurRadius: 10,
                             spreadRadius: 0.0,
@@ -91,6 +91,7 @@ class _HomePageState extends State<HomePage> {
                       controller: _todoController,
                       decoration: InputDecoration(
                         hintText: "Add new todo item",
+                        hintStyle: TextStyle(color: tdGrey),
                         border: InputBorder.none,
                       ),
                     ),
@@ -168,6 +169,7 @@ class _HomePageState extends State<HomePage> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
+        style: TextStyle(color: tedblack),
         onChanged: (value) => runFilter(value),
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(0),
