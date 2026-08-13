@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_appp/constants/colors.dart';
+import 'package:todo_appp/constants/models/themeprovider.dart';
 import 'package:todo_appp/constants/models/todo.dart';
 import 'package:todo_appp/widgets/todo_items.dart';
 
@@ -25,7 +27,47 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: _buildAppBar(),
+      appBar: AppBar(
+        backgroundColor: tdBGColor,
+        title: Center(
+          child: Text(
+            "To-Do App",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("Shah Zaib"),
+              accountEmail: Text("shahzaib12824@gmail.com"),
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Image.asset(
+                  "assets/images/shahzaib.jpg",
+                  width: 300,
+                  height: 300,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.dark_mode,
+              ),
+              title: Text("Dark Mode"),
+              onTap: () {
+                Provider.of<ThemeProvider>(context).toggleTheme();
+              },
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Container(
@@ -183,36 +225,6 @@ class _HomePageState extends State<HomePage> {
           hintText: "Search",
           hintStyle: TextStyle(color: tdGrey),
         ),
-      ),
-    );
-  }
-
-  AppBar _buildAppBar() {
-    return AppBar(
-      backgroundColor: tdBGColor,
-      elevation: 0,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(
-            Icons.menu,
-            color: tedblack,
-            size: 30,
-          ),
-          SizedBox(
-            height: 40,
-            width: 40,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.0),
-              child: Image.asset(
-                "assets/images/shahzaib.jpg",
-                width: 300,
-                height: 300,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
